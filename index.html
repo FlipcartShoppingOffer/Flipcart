@@ -103,6 +103,51 @@ display:block;
 border-radius:15px;
 box-shadow:0 4px 12px rgba(0,0,0,.15);
     }
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.7);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.popup-box{
+background:white;
+padding:20px;
+border-radius:15px;
+width:300px;
+text-align:center;
+}
+
+.wheel{
+width:180px;
+height:180px;
+border-radius:50%;
+margin:20px auto;
+background:conic-gradient(
+red 0deg 60deg,
+orange 60deg 120deg,
+yellow 120deg 180deg,
+green 180deg 240deg,
+blue 240deg 300deg,
+purple 300deg 360deg
+);
+transition:transform 4s ease-out;
+}
+
+.popup button{
+padding:12px 25px;
+background:#2874F0;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+    }
 </style>
 
 </head>
@@ -169,8 +214,38 @@ box-shadow:0 4px 12px rgba(0,0,0,.15);
 </p>
 </a>
 </div>
+
     
+<div id="wheelPopup" class="popup">
+<div class="popup-box">
+
+<h2>🎁 Spin & Win</h2>
+
+<div id="wheel" class="wheel"></div>
+
+<button onclick="spinWheel()">SPIN</button>
+
+<p id="result"></p>
+
 </div>
 
+<script>
+
+function spinWheel(){
+
+let wheel=document.getElementById("wheel");
+
+wheel.style.transform="rotate(1800deg)";
+
+setTimeout(function(){
+
+document.getElementById("result").innerHTML=
+"<h2 style='color:green;'>🎉 Congratulations!</h2><h3>You Won 80% OFF</h3>";
+
+},4000);
+
+}
+
+    </script>
 </body>
 </html>
