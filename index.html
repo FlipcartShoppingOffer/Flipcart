@@ -310,19 +310,37 @@ color:#0a8f2f;
 
 </div>   
 <div id="wheelPopup" class="popup">
-<div class="popup-box">
 
-<h2>🎁 Spin & Win</h2>
+  <div class="popup-box">
 
-<div id="wheel" class="wheel"></div>
+    <span class="close-btn" onclick="closeWheel()">&times;</span>
 
-<button onclick="spinWheel()">SPIN</button>
+    <h2>🎁 Spin & Win</h2>
 
-<p id="result"></p>
+    <div class="pointer">▼</div>
 
-</div>
+    <div id="wheel" class="wheel">
 
-</div>   
+      <div class="slice s1"><span>10% OFF</span></div>
+      <div class="slice s2"><span>20% OFF</span></div>
+      <div class="slice s3"><span>30% OFF</span></div>
+      <div class="slice s4"><span>50% OFF</span></div>
+      <div class="slice s5"><span>70% OFF</span></div>
+      <div class="slice s6"><span>80% OFF</span></div>
+
+    </div>
+
+    <button class="spin-btn" onclick="spinWheel()">SPIN</button>
+
+    <p id="result"></p>
+
+    <button id="claimBtn" class="claim-btn" onclick="closeWheel()">
+      🎁 Claim Offer
+    </button>
+
+  </div>
+</div>  
+    
 <script>
 
 function spinWheel(){
