@@ -343,21 +343,36 @@ color:#0a8f2f;
     
 <script>
 
+let spun = false;
+
 function spinWheel(){
 
-let wheel=document.getElementById("wheel");
+if(spun) return;
 
-wheel.style.transform="rotate(1800deg)";
+spun = true;
+
+let wheel = document.getElementById("wheel");
+
+wheel.style.transform = "rotate(2100deg)";
 
 setTimeout(function(){
 
-document.getElementById("result").innerHTML=
-"<h2 style='color:green;'>🎉 Congratulations!</h2><h3>You Won 80% OFF</h3>";
+document.getElementById("result").innerHTML =
+"🎉 Congratulations!<br><b>You Won 80% OFF</b>";
 
-},4000);
+document.getElementById("claimBtn").style.display = "inline-block";
+
+},5000);
 
 }
 
-    </script>
+function closeWheel(){
+
+document.getElementById("wheelPopup").style.display="none";
+
+}
+
+</script>
+    
 </body>
 </html>
